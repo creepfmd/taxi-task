@@ -1,5 +1,3 @@
-import math
-
 pD = [0, 0]
 pA = [0, 1]
 pB = [2, 0]
@@ -9,7 +7,7 @@ pH = [2, 1]
 scDADH = (pD[0] - pA[0])*(pD[0] - pH[0]) + (pD[1] - pA[1])*(pD[1] - pH[1])
 scBHDH = (pB[0] - pH[0])*(pD[0] - pH[0]) + (pB[1] - pH[1])*(pD[1] - pH[1])
 # Abs
-modDH = math.sqrt((pD[0] - pH[0])**2 + (pD[1] - pH[1])**2)
+modDH = ((pD[0] - pH[0])**2 + (pD[1] - pH[1])**2)**0.5
 
 # Projection of DA on DH
 # Not going back for pick-up
