@@ -21,8 +21,14 @@ print(prDADH)
 prBHDH = scBHDH / modDH
 print(prBHDH)
 
-# If all projections is posititve than direction is OK
+# If all projections is posititve than strict direction is OK
 if prDADH >= 0 and prBHDH >= 0:
-    print('Direction is OK!!!')
+    print('Strict direction is OK')
 else:
-    print('Direction is NOT OK')
+    print('Strict direction is NOT OK!!!')
+
+# If all sum of projections is less than initial distance than soft direction is OK
+if prDADH + prBHDH <= modDH:
+    print('Soft direction is OK')
+else:
+    print('Soft direction is NOT OK!!!')
