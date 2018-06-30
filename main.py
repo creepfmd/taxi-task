@@ -19,8 +19,8 @@ print(prDADH)
 prBHDH = scBHDH / modDH
 print(prBHDH)
 
-# If all projections is posititve than strict direction is OK
-if prDADH >= 0 and prBHDH >= 0:
+# If all scalar multiplications are posititve than strict direction is OK
+if scDADH >= 0 and scBHDH >= 0:
     print('Strict direction is OK')
 else:
     print('Strict direction is NOT OK!!!')
