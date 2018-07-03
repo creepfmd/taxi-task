@@ -6,6 +6,7 @@ pH = [2, 1]
 # Scalar multiply
 scDADH = (pD[0] - pA[0])*(pD[0] - pH[0]) + (pD[1] - pA[1])*(pD[1] - pH[1])
 scBHDH = (pB[0] - pH[0])*(pD[0] - pH[0]) + (pB[1] - pH[1])*(pD[1] - pH[1])
+scABDH = (pA[0] - pB[0])*(pD[0] - pH[0]) + (pA[1] - pB[1])*(pD[1] - pH[1])
 # Abs
 modDH = ((pD[0] - pH[0])**2 + (pD[1] - pH[1])**2)**0.5
 
@@ -20,7 +21,8 @@ prBHDH = scBHDH / modDH
 print(prBHDH)
 
 # If all scalar multiplications are posititve than strict direction is OK
-if scDADH >= 0 and scBHDH >= 0:
+# Also need to check codirection of AB with DH
+if scDADH >= 0 and scBHDH >= 0 and scABDH >= 0:
     print('Strict direction is OK')
 else:
     print('Strict direction is NOT OK!!!')
